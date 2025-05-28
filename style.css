@@ -1,9 +1,6 @@
 #row div{
-    padding: 10px;
     border: solid;
-    background-color: aqua;
-    width :30px;
-    height:30px;
+    background-color: white;
     flex:1;
 }
 
