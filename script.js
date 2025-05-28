@@ -12,11 +12,8 @@ function createRow(numberOfDivs){
     }  
 }
 
+for(let i =0;i<numberOfDiv;i++){
+    createRow(numberOfDiv)
+}
 
-createRow(numberOfDiv)
-
-
-
-
-//create a row of 16 divs.
-//create the grid using flexbox.
+//I want to create 16 rows of divs
