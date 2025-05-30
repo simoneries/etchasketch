@@ -49,8 +49,11 @@ button.addEventListener("click",()=>getNewGrid())
 function getNewGrid(){
     let numberOfTiles= Number(prompt("How many tiles would you like to have?"))
     //Tiles should not be too big
-    while (numberOfTiles>100){
-        numberOfTiles= Number(prompt("That number can be bigger than 100. Please choose again !"))
+    while (numberOfTiles>70){
+        numberOfTiles= Number(prompt("That number cannot be bigger than 70. Please choose again !"))
+    }
+    while (numberOfTiles<=0){
+        numberOfTiles= Number(prompt("This is not a valid number ! Please choose again !"))
     }
     const childDivs=container.querySelectorAll("div")
     childDivs.forEach(div=>div.remove())
