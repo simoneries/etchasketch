@@ -13,12 +13,12 @@ function createRow(numberOfDivs){
     }  
 }
 
-function createGrid(){
+function createGrid(numberOfDiv){
     for(let i =0;i<numberOfDiv;i++){
         createRow(numberOfDiv)
     }
 }
-let grid = createGrid()
+createGrid(16)
 hoverOnTiles()
 
 //i want to set up a hoover effect on my tiles = when i pass on a tile, it will change color.
@@ -38,6 +38,18 @@ function changeTileColor(e,color){
     e.target.style.backgroundColor=color
 }
 
+//pass a function to a button
 
+const button = document.querySelector("button")
+button.addEventListener("click",()=>getNewGrid())
 
-//next i want to set an event listener that will check if i hover on a div.
+// Create a function that will ask the user for the number of tiles he wants and return it.
+// Now my issue remains thatthe old number of tile remains --> 
+
+function getNewGrid(){
+    const numberOfTiles= Number(prompt("How many tiles would you like to have?"))
+    const childDivs=container.querySelectorAll("div")
+    childDivs.forEach(div=>div.remove())
+    createGrid(numberOfTiles)
+    hoverOnTiles()
+}
