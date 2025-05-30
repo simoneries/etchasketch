@@ -47,7 +47,11 @@ button.addEventListener("click",()=>getNewGrid())
 // Now my issue remains thatthe old number of tile remains --> 
 
 function getNewGrid(){
-    const numberOfTiles= Number(prompt("How many tiles would you like to have?"))
+    let numberOfTiles= Number(prompt("How many tiles would you like to have?"))
+    //Tiles should not be too big
+    while (numberOfTiles>100){
+        numberOfTiles= Number(prompt("That number can be bigger than 100. Please choose again !"))
+    }
     const childDivs=container.querySelectorAll("div")
     childDivs.forEach(div=>div.remove())
     createGrid(numberOfTiles)
