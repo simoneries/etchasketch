@@ -29,7 +29,8 @@ function hoverOnTiles(){
     const tileArray=[...tileList]
     //I pass an event listener to each div
     tileArray.forEach(function(tile){
-        tile.addEventListener("mouseover",e=>changeTileColor(e,"blue"))
+        const color = getNewColor()
+        tile.addEventListener("mouseover",e=>changeTileColor(e,color))
     })
 
 }
@@ -60,3 +61,21 @@ function getNewGrid(){
     createGrid(numberOfTiles)
     hoverOnTiles()
 }
+
+//I want to change the color of the tiles each time there is a new interaction
+
+function getRandomNumber(min,max){
+    //I want to return a number between 0 and 255.
+    return Math.floor(Math.random()*(max-min+1)+min)
+}
+function getNewColor(){
+    const red = getRandomNumber(0,255)
+    const blue=getRandomNumber(0,255)
+    const green = getRandomNumber(0,255)
+    return `rgb(${red},${blue},${green})`
+    //RGB code is composed of three values going from 0 to 255. 
+}
+
+
+
+
